@@ -1,0 +1,20 @@
+.HeaderBg{
+  background-color: #149777;
+}
+.icon--3D09z{
+width: 32px;
+height: 32px;
+margin-top: -4px;
+margin-right: 5px;
+}
+.Chat, .Login{
+  display: flex;
+}
+.PostAdd{
+  background-color: #FFC800;
+  color: #673500;
+  padding: 13px 14px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 14px;
+}

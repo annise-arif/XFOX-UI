@@ -1,0 +1,63 @@
+.Search{
+  background-color: #149777;
+  height: 12rem;
+}
+.locationBtn{
+  font-size: 15px;
+  border: none;
+  color: white;
+  border-radius: 16px;
+  display: flex;
+  background-color: #10846F;
+  padding-left: 0px;
+  padding-right: 13px;
+  padding-top: 2px;
+  padding-bottom: 3px;
+  align-items: center;
+}
+
+.LocationIcon > svg{
+  margin-left: -12px;
+  margin-right: -25px;
+  margin-top: 5px;
+  height: 26px;
+  align-items: center;
+}
+
+.SearchForm > ::placeholder{
+  position: relative;
+  opacity: 0.6;
+  font-weight: 400;
+  font-size: 18px;
+}
+@media only screen and (max-width: 600px) {
+  .SearchForm > ::placeholder{
+    font-size: 14px;
+  }
+}
+.SearchIcon{
+  background-color: #FFC800;
+  padding: 11px 13px;
+  border-radius: 50px;
+  position: absolute;
+  top: 174px;
+  right: 485px;
+}
+@media only screen and (max-width: 600px) {
+  .SearchIcon{
+    background-color: #FFC800;
+    padding: 11px 13px;
+    border-radius: 50px;
+    position: absolute;
+    top: 163px;
+    right: 53px;
+  }
+}
+.SearchInput{
+ width: 50%;
+}
+@media only screen and (max-width: 600px) {
+  .SearchInput{
+    width: 75%;
+   }
+}
