@@ -1,0 +1,18 @@
+.headLine{
+  font-size: 15px;
+  font-weight: 700;
+  color: #363d3a;
+}
+.quickLinkCard{
+  border: none;
+  background-color: #F3F6F5;
+  border-radius: 4px;
+}
+.QuickLinkTitle{
+  font-size: 15px;
+  color: #424e4e;
+}
+.QuickLink > a{
+  text-decoration: none;
+  color: #424e4e;
+}

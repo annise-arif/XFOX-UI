@@ -11,7 +11,7 @@ export const Header:FC = () => {
       <Container>
         <Navbar.Brand href="#">
           <a href="#" className='text-white text-decoration-none fs-3 fw-bold'>
-          XFOX
+          Xfox.com
           </a>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
