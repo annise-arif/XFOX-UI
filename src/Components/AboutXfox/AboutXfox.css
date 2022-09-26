@@ -1,0 +1,27 @@
+.aboutTitle{
+  font-weight: 700;
+  font-size: 17px;
+  color: #707676;
+}
+.collapseAboutTitle{
+  font-weight: 700;
+  font-size: 15px;
+  color: #707676;
+}
+.aboutPara{
+  color:#707676;
+  font-size: 16px;
+}
+.collapsBtn{
+  border: none;
+  background-color: white;
+  font-weight: 400;
+  color: #707676;
+  margin-top: 18px;
+}
+.downArrow{
+  margin-left: 12px;
+}
+.upArrow{
+ margin-left: 12px;
+}

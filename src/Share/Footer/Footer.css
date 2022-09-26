@@ -1,0 +1,21 @@
+.horizontalLine{
+  background-color: #149777;
+  height: 2px;
+  width: 100%;
+  margin: 20px 0px;
+}
+.anchorStyleFb{
+  text-decoration: none;
+  color: #3B59B3;
+}
+.anchorStyle{
+  text-decoration: none;
+  color: #0074BA;
+}
+.FooterTitleStyle{
+  margin-bottom: 19px;
+}
+.FooteranchorStyle{
+  color: #0074BA;
+  text-decoration: none;
+}
