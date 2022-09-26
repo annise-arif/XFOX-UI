@@ -146,8 +146,8 @@ export const Footer: FC = () => {
 
           <hr />
           <div className="copyright d-flex justify-content-between mb-5 mt-2">
-          <small className="">Copyright &copy; Saltside Technologies</small>
-            <h4 className="fw-bold"><span>Xfox.com</span></h4>
+            <small className="">Copyright &copy; Saltside Technologies</small>
+            <h5 className="fw-bold"><span>Xfox.com</span></h5>
           </div>
         </Row>
       </Container>
