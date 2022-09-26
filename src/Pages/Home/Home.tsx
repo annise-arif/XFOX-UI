@@ -10,7 +10,7 @@ import { Header } from '../../Share/Header/Header';
 
 export const Home:FC = () => {
   return (
-    <div className=''>
+    <>
       <Header />
       <Search />
       <ItemsCategory />
@@ -19,6 +19,6 @@ export const Home:FC = () => {
       <QuickLinks />
       <AboutXfox />
       <Footer />
-    </div>
+    </>
   );
 };
