@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, Fragment } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./Footer.css";
 import { ReactComponent as GooglePlay } from "../../assets/svg/googlePlay.svg";
@@ -37,17 +37,18 @@ export const Footer: FC = () => {
               </a>
             </div>
           </Col>
-          {footerLinks.map(({title, link1, link2, link3, link4, link5, link6, link7}, index) => {
+          {footerLinks.map(({title, links}, index) => {
             return (
               <Col lg={2} md={2} xs={12} key={index}>
                 <h6 className="FooterTitleStyle">{title}</h6>
-                <a className="FooteranchorStyle" href={link1.hLink}>{link1.link}</a><br />
-                <a className="FooteranchorStyle" href={link2.hLink}>{link2.link}</a><br />
-                <a className="FooteranchorStyle" href={link3.hLink}>{link3.link}</a><br />
-                <a className="FooteranchorStyle" href={link4?.hLink}>{link4?.link}</a><br />
-                <a className="FooteranchorStyle" href={link5?.hLink}>{link5?.link}</a><br />
-                <a className="FooteranchorStyle" href={link6?.hLink}>{link6?.link}</a><br />
-                <a className="FooteranchorStyle" href={link7?.hLink}>{link7?.link}</a>
+                {
+                    links.map((link, i)=>(
+                      <Fragment key={i}>
+                        <a className="FooteranchorStyle" href={link.hLink}>{link.link}</a>
+                        <br />
+                      </Fragment>
+                    ))
+                }
               </Col>
             );
           })}

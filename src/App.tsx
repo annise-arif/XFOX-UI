@@ -3,6 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Home } from './Pages/Home/Home';
 import { NotFound } from './Share/NotFound/NotFound';
+import { LoginModal } from './Components/LoginModal/LoginModal';
 
 function App() {
  
