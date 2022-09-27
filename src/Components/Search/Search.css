@@ -25,7 +25,6 @@
 }
 
 .SearchForm > ::placeholder {
-  position: relative;
   opacity: 0.6;
   font-weight: 400;
   font-size: 18px;
@@ -34,8 +33,7 @@
   background-color: #ffc800;
   padding: 11px 13px;
   border-radius: 50px;
-  position: absolute;
-  top: 174px;
+  top: calc(50% - 24px);
   right: 481px;
 }
 .SearchInput {
@@ -56,11 +54,6 @@
 
 @media only screen and (max-width: 600px) {
   .SearchIcon {
-    background-color: #ffc800;
-    padding: 11px 13px;
-    border-radius: 50px;
-    position: absolute;
-    top: 163px;
     right: 53px;
   }
 }

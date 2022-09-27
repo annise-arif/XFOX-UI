@@ -15,7 +15,7 @@ export const Header:FC = () => {
       <Container>
         <Navbar.Brand href="#">
           <a href="#" className='text-white text-decoration-none fs-3 fw-bold'>
-          Xfox.com
+          <h3>Xfox.com</h3>
           </a>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -25,7 +25,7 @@ export const Header:FC = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#" className="text-white fw-semibold">All ads</Nav.Link>
+            <Nav.Link href="#" className="text-white fw-semibold mx-2">All ads</Nav.Link>
             <Nav.Link href="#">
             <a href="#" className='text-white text-decoration-none'><small className=' border border-dark px-2 py-1 rounded-1'>বাংলা</small></a>
             </Nav.Link>

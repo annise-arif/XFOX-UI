@@ -59,16 +59,16 @@ export const AboutXfox: FC = () => {
       >
         {open ? (
           <>
+          <span>Show less</span>
+          <span>
+            <UpArrow className="upArrow" />
+          </span>
+        </>
+        ) : (
+          <>
             <span>Show more</span>
             <span>
               <DownArrow className="downArrow" />
-            </span>
-          </>
-        ) : (
-          <>
-            <span>Show less</span>
-            <span>
-              <UpArrow className="upArrow" />
             </span>
           </>
         )}

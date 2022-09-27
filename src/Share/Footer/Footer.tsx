@@ -27,7 +27,7 @@ export const Footer: FC = () => {
             <div className="my-4">
               <h6>Connect with</h6>
               <a className="anchorStyleFb fw-bold" href="#">
-                <Facebook /> Linke us on facebook
+                <Facebook /> Like us on facebook
               </a>
             </div>
             <div className="mt-4 mb-5">

@@ -1,13 +1,16 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import Form from "react-bootstrap/Form";
+import { CountriesModal } from "./CountriesModal/CountriesModal";
 import "./Search.css";
 
 export const Search: FC = () => {
+  const [modalShow, setModalShow] = React.useState(false);
   let Country = "All of Bangladesh";
   return (
     <div className="Search pt-5">
       <div className="location">
-        <button className="locationBtn mx-auto mb-3">
+        <button onClick={() => setModalShow(true)}
+         className="locationBtn mx-auto mb-3">
           <span className="locationIcon">
             <div className="icon--3D09z LocationIcon small--2q8vN gtm-search-click">
               <svg
@@ -21,15 +24,19 @@ export const Search: FC = () => {
           </span>
           <span>{Country}</span>
         </button>
+        <CountriesModal 
+             show={modalShow}
+             onHide={() => setModalShow(false)}
+             />
       </div>
-      <Form className="d-flex SearchForm">
+      <Form className="d-flex SearchForm position-relative">
       <Form.Control
           type="search"
           placeholder="What are you looking for?"
           className="SearchInput mx-auto rounded-5 px-4 py-3"
           aria-label="Search"
         />
-        <div className="SearchIcon">
+        <div className="SearchIcon position-absolute">
           <svg
             width="24"
             height="24"
