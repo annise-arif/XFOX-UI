@@ -13,7 +13,7 @@ export const Header:FC = () => {
     <div>
       <Navbar className="HeaderBg" expand="lg">
       <Container>
-        <Navbar.Brand href="#">
+        <Navbar.Brand href="/">
           <h3 className='text-white fs-3 fw-bold'>Xfox.com</h3>
           
         </Navbar.Brand>

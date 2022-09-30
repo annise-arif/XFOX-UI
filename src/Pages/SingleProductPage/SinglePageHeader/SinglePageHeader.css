@@ -1,0 +1,73 @@
+.main {
+  background-color: #e7edee;
+  padding: 40px;
+}
+.header {
+  height: 100px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px 24px;
+  position: relative;
+}
+.bikeSvg {
+  background-color: #d5e1e6;
+  height: 58px;
+  width: 150px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.svg{
+  margin-top: -16px;
+  margin-left: 23px;
+  position: absolute;
+}
+.bikeSvg::after{
+  content: "";
+  position: absolute;
+  right: 1110px;
+  width: 58px;
+  height: 58px;
+  background-image: linear-gradient(to top right,transparent 50%,#4470ba 0),linear-gradient(to top left,transparent 50%,#4470ba 0);
+  background-size: 50.2% 100%;
+  background-repeat: no-repeat;
+  background-position: 0 0,100% 0;
+}
+.paraAndExploreBtn {
+  background-color: #4470ba;
+  display: flex;
+  width: 100%;
+  height: 58px;
+  justify-content: space-between;
+  padding: 0px 40px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.explorePara {
+  font-size: 17px;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  margin-top: 14px;
+}
+.exploreBtn {
+  margin-top: 10px;
+  align-items: center;
+  height: 0px;
+  border: none;
+  border-radius: 30px;
+  padding: 18px 14px 20px 14px;
+  font-weight: 700;
+  color: #4470ba;
+}
+
+.rightArrow {
+  margin-left: 8px;
+  background-color: #4470ba;
+  margin-top: 2px;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+}
+.arrowIcon{
+  margin-bottom: 11.5px;
+}
