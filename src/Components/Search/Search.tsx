@@ -8,7 +8,7 @@ export const Search: FC = () => {
   let Country = "All of Bangladesh";
   return (
     <div className="Search pt-5">
-      <div className="location">
+      <div className="">
         <button
           onClick={() => setModalShow(true)}
           className="locationBtn mx-auto mb-3"

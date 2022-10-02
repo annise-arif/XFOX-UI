@@ -1,0 +1,78 @@
+.sort, .typeOfPoster, .category{
+  font-size: 12px;
+  color: #707676;
+}
+.filterPara{
+  margin-bottom: 9px;
+  margin-top: 38px;
+}
+.filter{
+  font-size: 12px;
+  color: #707676;
+}
+.featured{
+  background: #673500;
+  color: #fff;
+  font-weight: 800;
+  padding: 0 4px;
+  font-size: 10px;
+  border-radius: 2px;
+}
+.featured, .doorStep, .urgent{
+  cursor: pointer;
+}
+.category-hr{
+  margin-top: 32px !important;
+  margin-bottom: -4px !important;
+}
+.bottomArrow{
+  opacity: 0.3;
+}
+.topArrow{
+  opacity: 0.3;
+  margin-right: 4px;
+}
+.allCategories{
+  font-size: 14.5px;
+  color: #0074BA;
+  font-weight: 400;
+  margin-top: 22px;
+  margin-bottom: 11px;
+  cursor: pointer;
+}
+.mobile{
+  margin-left: 28px;
+  cursor: pointer;
+}
+.mobile > small{
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 5px;
+}
+.accessoriesName{
+  color: #0074BA;
+  text-decoration: none;
+  font-size: 14.4px;
+  margin-left: 56.6px;
+  margin-top: 66px;
+}
+.accessoriesquantity{
+  color: #707676;
+}
+.location{
+  margin-left: 0px;
+}
+.locationHr{
+  margin-top: -10px !important;
+  margin-bottom: -4px !important;
+}
+.allOfBangladesh{
+  font-size: 16.8px;
+  font-weight: 700;
+}
+.locationName{
+  color: #0074BA;
+  text-decoration: none;
+  font-size: 14.5px;
+  
+}

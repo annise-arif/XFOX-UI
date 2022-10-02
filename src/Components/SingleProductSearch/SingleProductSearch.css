@@ -1,0 +1,53 @@
+.location{
+  align-items: center;
+  margin-left: -7px;
+  border: none;
+  background-color: white;
+  margin-top: 18px;
+}
+ .mobileCard{
+  align-items: center;
+  margin-left: -7px;
+  border: none;
+  background-color: white;
+  margin-top: 11px;
+}
+
+/* Search Input Design */
+
+.singlePageSearchBar{
+  margin-top: 18px;
+  display: flex;
+  position: relative;
+}
+.singlePageSearchInput{
+  width: 100%;
+  border: 1px solid #707676;
+  border-radius: 25px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+.singlePageSearchInput:focus{
+  outline: none;
+}
+.singlePageSearchInput::placeholder{
+  font-size: 1.1em;
+  opacity: 0.6;
+}
+.SinglePageSearchSvg{
+  border: none;
+  position: absolute;
+  background-color: #FFC800;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  align-items: center;
+  top: calc(50% - 18px);
+  right: 5px;
+}
+.SinglePageSearchSvg > svg{
+margin-top: -4px;
+margin-left: 0px;
+}

@@ -1,12 +1,4 @@
-.main {
-  background-color: #e7edee;
-  padding: 40px;
-}
-.header {
-  height: 100px;
-  background-color: white;
-  border-radius: 5px;
-  padding: 20px 24px;
+.headerBanner {
   position: relative;
 }
 .bikeSvg {
@@ -24,7 +16,7 @@
 .bikeSvg::after{
   content: "";
   position: absolute;
-  right: 1110px;
+  right: 1075px;
   width: 58px;
   height: 58px;
   background-image: linear-gradient(to top right,transparent 50%,#4470ba 0),linear-gradient(to top left,transparent 50%,#4470ba 0);

@@ -1,13 +1,13 @@
 import React, {FC} from "react";
-import { ReactComponent as Bike } from "../../../assets/singlePageSvg/bike.svg";
-import { ReactComponent as DoorStep } from "../../../assets/singlePageSvg/doorStep.svg";
-import { ReactComponent as RightArrow } from "../../../assets/singlePageSvg/rightArrow.svg";
+import { ReactComponent as Bike } from "../../assets/singlePageSvg/bike.svg";
+import { ReactComponent as DoorStep } from "../../assets/singlePageSvg/doorStep.svg";
+import { ReactComponent as RightArrow } from "../../assets/singlePageSvg/rightArrow.svg";
 import "./SinglePageHeader.css";
 
 
 export const SinglePageHeader:FC = () => {
   return (
-    <div className="header d-flex">
+    <div className="headerBanner d-flex">
       <div className="bikeSvg">
         <div className="svg">
           <Bike />
