@@ -4,6 +4,8 @@
   border: none;
   background-color: white;
   margin-top: 18px;
+  font-size: 14px;
+  font-weight: 700;
 }
  .mobileCard{
   align-items: center;
@@ -11,6 +13,8 @@
   border: none;
   background-color: white;
   margin-top: 11px;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 /* Search Input Design */

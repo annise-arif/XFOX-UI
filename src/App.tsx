@@ -15,7 +15,7 @@ function App() {
       
       <Routes>
           <Route path='/' element={<Home />}/>
-          <Route path="/:hLink/:_id" element={<SingleProductPage />}/>
+          <Route path="/:productName/:_id" element={<SingleProductPage />}/>
           <Route path='*' element={<NotFound />}/>
       </Routes>
       

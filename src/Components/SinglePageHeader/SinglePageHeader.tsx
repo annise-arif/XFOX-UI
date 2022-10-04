@@ -21,7 +21,7 @@ export const SinglePageHeader:FC = () => {
           <DoorStep />
         </div>
         <button className="exploreBtn border-none d-flex">
-          <span>Explore</span>{" "}
+          <span className="mt-1">Explore</span>{" "}
           <div className="rightArrow">
             <RightArrow className="arrowIcon" />
           </div>

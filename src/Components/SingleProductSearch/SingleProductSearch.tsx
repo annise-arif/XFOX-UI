@@ -5,7 +5,12 @@ import { ReactComponent as MobileSvg } from "../../assets/singlePageSvg/mobileCa
 import "./SingleProductSearch.css";
 import { ReactComponent as SinglePageSearchSvg } from "../../assets/singlePageSvg/searchIcon.svg";
 
-export const SingleProductSearch: FC = () => {
+type productProps = {
+  productName: string | undefined,
+};
+
+export const SingleProductSearch: FC<productProps> = (productName) => {
+  
   return (
     <Row>
       <Col lg={6} md={6} xs={12}>
@@ -25,8 +30,8 @@ export const SingleProductSearch: FC = () => {
               <button className="mobileCard d-flex">
                 <div className="mobileCard mb-2 me-2">
                   <MobileSvg />
-                </div>{" "}
-                Mobiles
+                </div>
+                {productName.productName}
               </button>
             </a>
           </Col>

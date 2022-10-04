@@ -1,15 +1,17 @@
-import React, { FC, useState } from "react";
-import "./SingleProduct.css";
+import { FC, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import Collapse from "react-bootstrap/Collapse";
+import { ReactComponent as BottomArrow } from "../../assets/singlePageSvg/bottomArrow.svg";
 import { ReactComponent as DoorStep } from "../../assets/singlePageSvg/filterDoorStep.svg";
 import { ReactComponent as Exclamatory } from "../../assets/singlePageSvg/filterlExclamatory.svg";
 import { ReactComponent as Urgent } from "../../assets/singlePageSvg/filterUrgent.svg";
-import { ReactComponent as BottomArrow } from "../../assets/singlePageSvg/bottomArrow.svg";
-import { ReactComponent as TopArrow } from "../../assets/singlePageSvg/topArrow.svg";
 import { ReactComponent as Mobile } from "../../assets/singlePageSvg/mobileIcon.svg";
-import Collapse from "react-bootstrap/Collapse";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
+import { ReactComponent as RightLinkArrow } from "../../assets/singlePageSvg/rightLinkArrow.svg";
+import { ReactComponent as TopArrow } from "../../assets/singlePageSvg/topArrow.svg";
+import { ReactComponent as CaroselLeftArrow } from "../../assets/singlePageSvg/CaroselLeftArrow.svg";
+import { ReactComponent as CaroselRightArrow } from "../../assets/singlePageSvg/CaroselRightArrow.svg";
+import "./SingleProduct.css";
+import Carousel from "react-bootstrap/Carousel";
 
 const mobileAccessories = [
   {
@@ -65,10 +67,19 @@ const locationName = [
   },
 ];
 
-const link = "Home >"
-export const SingleProduct: FC = () => {
+type productProps = {
+  productName: string | undefined;
+};
+export const SingleProduct: FC<productProps> = ({ productName }) => {
   const [categoryOpen, setCategoryOpen] = useState(false);
   const [locationOpen, setLocationOpen] = useState(false);
+
+  // const [index, setIndex] = useState(0);
+
+  // const handleSelect = (selectedIndex: number, e: any) => {
+  //   setIndex(selectedIndex);
+  // };
+
   return (
     <Row>
       <Col lg={3} md={3} xs={12}>
@@ -212,7 +223,7 @@ export const SingleProduct: FC = () => {
             <div className="locationHr">
               <hr />
             </div>
-            
+
             <p
               className="bg-white border-0"
               onClick={() => setLocationOpen(!locationOpen)}
@@ -237,11 +248,13 @@ export const SingleProduct: FC = () => {
 
             <Collapse in={locationOpen} className="mb-4">
               <div id="example-collapse-text">
-                <span className="allOfBangladesh"><small>All of Bangladesh</small>
+                <span className="allOfBangladesh">
+                  <small>All of Bangladesh</small>
                 </span>
                 <br />
-                {locationName.slice(0, 5).map(
-                  ({ locationName, adQuantity }, index) => {
+                {locationName
+                  .slice(0, 5)
+                  .map(({ locationName, adQuantity }, index) => {
                     return (
                       <div className="my-2" key={index}>
                         <a href="#" className="locationName">
@@ -253,20 +266,100 @@ export const SingleProduct: FC = () => {
                         </a>
                       </div>
                     );
-                  }
-                )}
+                  })}
               </div>
             </Collapse>
-
           </div>
         </Container>
       </Col>
 
       <Col lg={9} md={9} xs={12}>
         <Container>
-          <div className="link">
-            <p><span></span></p>
+          <div className="links">
+            <ul className="d-flex gap-1">
+              {[
+                { link: "Home", hLink: "/" },
+                { link: "All ads", hLink: "/" },
+              ].map(({ link, hLink }, i) => {
+                return (
+                  <li key={i} className="LinkStyle">
+                    <a className="text-decoration-none" href={hLink}>
+                      <span>
+                        {link} <RightLinkArrow />
+                      </span>
+                    </a>
+                  </li>
+                );
+              })}
+              <li className="LinkStyle">
+                <a className="text-decoration-none" href="#">
+                  <b>{productName}</b>
+                </a>
+              </li>
+            </ul>
           </div>
+
+          {/* Product Name and ads */}
+
+          <div className="Product-name">
+            <h1>Mobiles Phones and Accessories for Sale in Bangladesh</h1>
+            <p>Showing 1-25 of 94,362 ads</p>
+          </div>
+
+          {/* Product Slider */}
+
+          <Carousel
+            nextIcon={<div><CaroselRightArrow style={{ maxHeight: "60px", marginRight: "-53px"}}/></div>}
+            prevIcon={<div><CaroselLeftArrow style={{ maxHeight: "60px", marginLeft: "-584px"}}/></div>}
+            style={{ maxHeight: "auto", maxWidth: "630px", borderRadius: "50px"}}
+          >
+            <Carousel.Item>
+              <img
+                className="d-block w-100 Shadow"
+                src="https://i.ibb.co/VJgVBxY/cropped.jpg"
+                alt="First slide"
+              />
+              <Carousel.Caption className="Captions">
+                <span>Mobile Shop Exchange Point</span>
+                <h3>Apple iPhone 13. Pro Max 256GB GOLD (New) (Used)</h3>
+                <p>
+                  Tk 131,000
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100 Shadow"
+                src="https://i.ibb.co/B6zV8fv/cropped-1.jpg"
+                alt="Second slide"
+              />
+
+              <Carousel.Caption className="Captions">
+              <span>Mobile Shop Exchange Point</span>
+                <h3>OPPO A57 A57(4GB+64GB)(New)</h3>
+                <p>
+                  Tk 4,899
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="https://i.ibb.co/S3jYBzn/cropped-3.jpg"
+                alt="Third slide"
+              />
+
+              <Carousel.Caption className="Captions">
+              <span>dazzle</span>
+                <h3>Apple iPhone 13 Pro Max 256gb Bh 100% (Used)</h3>
+                <p>
+                  Tk 95,000
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
+
+          
         </Container>
       </Col>
     </Row>
