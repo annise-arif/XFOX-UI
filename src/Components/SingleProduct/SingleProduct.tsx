@@ -12,6 +12,12 @@ import { ReactComponent as CaroselLeftArrow } from "../../assets/singlePageSvg/C
 import { ReactComponent as CaroselRightArrow } from "../../assets/singlePageSvg/CaroselRightArrow.svg";
 import "./SingleProduct.css";
 import Carousel from "react-bootstrap/Carousel";
+import Card from "react-bootstrap/Card";
+import smasung from "../../assets/singleProductImg/badgedPhone/samsung.jpg";
+import apple from "../../assets/singleProductImg/badgedPhone/apple.jpg";
+import CommonImg from "../../assets/singleProductImg/xiaomiCommonImg.jpg";
+import { ReactComponent as Badge } from "../../assets/svg/badge.svg";
+import Pagination from "react-bootstrap/Pagination";
 
 const mobileAccessories = [
   {
@@ -67,18 +73,176 @@ const locationName = [
   },
 ];
 
+const badgeProductsData = [
+  {
+    img: smasung,
+    name: "Samsung Galaxy A51 . (Used)",
+    location: "Barishal, Mobile Phones",
+    price: "Tk 24,000",
+  },
+  {
+    img: apple,
+    name: "Apple iPhone 11 Pro Max . (Used)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+  },
+];
+const productsData = [
+  {
+    img: CommonImg,
+    name: "Xiaomi Redmi Note 10 Only sell (Used)",
+    location: "Chattogram, Mobile Phones",
+    price: "Tk 15,800",
+    releaseTime: "just now",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (Used)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "just now",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (Used)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "1 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (Used)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "2 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (Used)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "9 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (Used)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "7 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 11 Pro Max . (New)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "17 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (Used)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "14 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (New)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "31 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (Used)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "55 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (New)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "26 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (Used)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "2 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (New)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "21 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (Used)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "22 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (New)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "40 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (Used)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "30 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (Used)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "20 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (New)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "7 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (Used)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "21 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Apple iPhone 6S . (Used)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "24 minutes",
+  },
+  {
+    img: CommonImg,
+    name: "Vivo Y21 . (New)",
+    location: "Dhaka, Mobile Phones",
+    price: "Tk 52,000",
+    releaseTime: "58 minutes",
+  },
+];
+
 type productProps = {
   productName: string | undefined;
 };
 export const SingleProduct: FC<productProps> = ({ productName }) => {
   const [categoryOpen, setCategoryOpen] = useState(false);
   const [locationOpen, setLocationOpen] = useState(false);
-
-  // const [index, setIndex] = useState(0);
-
-  // const handleSelect = (selectedIndex: number, e: any) => {
-  //   setIndex(selectedIndex);
-  // };
 
   return (
     <Row>
@@ -273,7 +437,7 @@ export const SingleProduct: FC<productProps> = ({ productName }) => {
         </Container>
       </Col>
 
-      <Col lg={9} md={9} xs={12}>
+      <Col lg={9} md={9} xs={12} className="mb-5">
         <Container>
           <div className="links">
             <ul className="d-flex gap-1">
@@ -306,12 +470,28 @@ export const SingleProduct: FC<productProps> = ({ productName }) => {
             <p>Showing 1-25 of 94,362 ads</p>
           </div>
 
-          {/* Product Slider */}
+          {/* Products Slider */}
 
           <Carousel
-            nextIcon={<div><CaroselRightArrow style={{ maxHeight: "60px", marginRight: "-53px"}}/></div>}
-            prevIcon={<div><CaroselLeftArrow style={{ maxHeight: "60px", marginLeft: "-584px"}}/></div>}
-            style={{ maxHeight: "auto", maxWidth: "630px", borderRadius: "50px"}}
+            nextIcon={
+              <div>
+                <CaroselRightArrow
+                  style={{ maxHeight: "60px", marginRight: "-53px" }}
+                />
+              </div>
+            }
+            prevIcon={
+              <div>
+                <CaroselLeftArrow
+                  style={{ maxHeight: "60px", marginLeft: "-584px" }}
+                />
+              </div>
+            }
+            style={{
+              maxHeight: "auto",
+              maxWidth: "630px",
+              borderRadius: "50px",
+            }}
           >
             <Carousel.Item>
               <img
@@ -322,9 +502,7 @@ export const SingleProduct: FC<productProps> = ({ productName }) => {
               <Carousel.Caption className="Captions">
                 <span>Mobile Shop Exchange Point</span>
                 <h3>Apple iPhone 13. Pro Max 256GB GOLD (New) (Used)</h3>
-                <p>
-                  Tk 131,000
-                </p>
+                <p>Tk 131,000</p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -335,11 +513,9 @@ export const SingleProduct: FC<productProps> = ({ productName }) => {
               />
 
               <Carousel.Caption className="Captions">
-              <span>Mobile Shop Exchange Point</span>
+                <span>Mobile Shop Exchange Point</span>
                 <h3>OPPO A57 A57(4GB+64GB)(New)</h3>
-                <p>
-                  Tk 4,899
-                </p>
+                <p>Tk 4,899</p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -350,16 +526,86 @@ export const SingleProduct: FC<productProps> = ({ productName }) => {
               />
 
               <Carousel.Caption className="Captions">
-              <span>dazzle</span>
+                <span>dazzle</span>
                 <h3>Apple iPhone 13 Pro Max 256gb Bh 100% (Used)</h3>
-                <p>
-                  Tk 95,000
-                </p>
+                <p>Tk 95,000</p>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
 
-          
+          {/* Single Badge Products Card */}
+
+          {badgeProductsData.map(({ img, name, location, price }, index) => {
+            return (
+              <Card
+                key={index}
+                className="mainCard"
+                style={{
+                  maxWidth: "39.5rem",
+                  maxHeight: "auto",
+                  marginBottom: "20px",
+                }}
+              >
+                <Card.Body className="cardBody">
+                  <img style={{ width: "170px", height: "130px" }} src={img} />
+                  <div className="cardContent">
+                    <Card.Title className="ProductName">{name}</Card.Title>
+                    <Card.Text className="productLocation">
+                      {location}
+                    </Card.Text>
+                    <h6 className="productPrice">{price}</h6>
+                  </div>
+                </Card.Body>
+                <span className="badge">
+                  <Badge />
+                </span>
+              </Card>
+            );
+          })}
+
+          {/* Single Products Card */}
+
+          {productsData.map(
+            ({ img, name, location, price, releaseTime }, ind) => {
+              return (
+                <Card
+                  className="productsCard"
+                  style={{
+                    maxWidth: "39.5rem",
+                    maxHeight: "auto",
+                  }}
+                >
+                  <Card.Body className="productsCardBody">
+                    <img
+                      style={{ width: "140px", height: "100px" }}
+                      src={img}
+                    />
+                    <div className="cardContent">
+                      <Card.Title className="ProductName">{name}</Card.Title>
+                      <Card.Text className="productLocation">
+                        {location}
+                      </Card.Text>
+                      <h6 className="productPrice">{price}</h6>
+                    </div>
+                  </Card.Body>
+                  <span className="releaseTime">{releaseTime}</span>
+                </Card>
+              );
+            }
+          )}
+
+          {/* Pagination */}
+
+          <Pagination className="mt-5 ms-5 ps-5 d-flex">
+            <Pagination.Prev className="ms-5 ps-5"/>
+            <Pagination.Item active>{1}</Pagination.Item>
+            <Pagination.Item>{2}</Pagination.Item>
+            <Pagination.Item>{3}</Pagination.Item>
+            <Pagination.Item>{4}</Pagination.Item>
+            <Pagination.Item>{5}</Pagination.Item>
+            <Pagination.Ellipsis />
+            <Pagination.Next />
+          </Pagination>
         </Container>
       </Col>
     </Row>
