@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Collapse from "react-bootstrap/Collapse";
+import Carousel from "react-bootstrap/Carousel";
 import { ReactComponent as BottomArrow } from "../../assets/singlePageSvg/bottomArrow.svg";
 import { ReactComponent as DoorStep } from "../../assets/singlePageSvg/filterDoorStep.svg";
 import { ReactComponent as Exclamatory } from "../../assets/singlePageSvg/filterlExclamatory.svg";
@@ -11,13 +12,14 @@ import { ReactComponent as TopArrow } from "../../assets/singlePageSvg/topArrow.
 import { ReactComponent as CaroselLeftArrow } from "../../assets/singlePageSvg/CaroselLeftArrow.svg";
 import { ReactComponent as CaroselRightArrow } from "../../assets/singlePageSvg/CaroselRightArrow.svg";
 import "./SingleProduct.css";
-import Carousel from "react-bootstrap/Carousel";
-import Card from "react-bootstrap/Card";
 import smasung from "../../assets/singleProductImg/badgedPhone/samsung.jpg";
 import apple from "../../assets/singleProductImg/badgedPhone/apple.jpg";
 import CommonImg from "../../assets/singleProductImg/xiaomiCommonImg.jpg";
-import { ReactComponent as Badge } from "../../assets/svg/badge.svg";
+
 import Pagination from "react-bootstrap/Pagination";
+import { SingleProductCard } from "../SingleProductCard/SingleProductCard";
+import { SingleBadgeProductCard } from "../SingleBadgeProductCard/SingleBadgeProductCard";
+
 
 const mobileAccessories = [
   {
@@ -75,12 +77,14 @@ const locationName = [
 
 const badgeProductsData = [
   {
+    id: 1,
     img: smasung,
     name: "Samsung Galaxy A51 . (Used)",
     location: "Barishal, Mobile Phones",
     price: "Tk 24,000",
   },
   {
+    id: 2,
     img: apple,
     name: "Apple iPhone 11 Pro Max . (Used)",
     location: "Dhaka, Mobile Phones",
@@ -505,6 +509,7 @@ export const SingleProduct: FC<productProps> = ({ productName }) => {
                 <p>Tk 131,000</p>
               </Carousel.Caption>
             </Carousel.Item>
+
             <Carousel.Item>
               <img
                 className="d-block w-100 Shadow"
@@ -518,6 +523,7 @@ export const SingleProduct: FC<productProps> = ({ productName }) => {
                 <p>Tk 4,899</p>
               </Carousel.Caption>
             </Carousel.Item>
+
             <Carousel.Item>
               <img
                 className="d-block w-100"
@@ -531,68 +537,16 @@ export const SingleProduct: FC<productProps> = ({ productName }) => {
                 <p>Tk 95,000</p>
               </Carousel.Caption>
             </Carousel.Item>
+
           </Carousel>
 
           {/* Single Badge Products Card */}
 
-          {badgeProductsData.map(({ img, name, location, price }, index) => {
-            return (
-              <Card
-                key={index}
-                className="mainCard"
-                style={{
-                  maxWidth: "39.5rem",
-                  maxHeight: "auto",
-                  marginBottom: "20px",
-                }}
-              >
-                <Card.Body className="cardBody">
-                  <img style={{ width: "170px", height: "130px" }} src={img} />
-                  <div className="cardContent">
-                    <Card.Title className="ProductName">{name}</Card.Title>
-                    <Card.Text className="productLocation">
-                      {location}
-                    </Card.Text>
-                    <h6 className="productPrice">{price}</h6>
-                  </div>
-                </Card.Body>
-                <span className="badge">
-                  <Badge />
-                </span>
-              </Card>
-            );
-          })}
+         <SingleBadgeProductCard badgeProductsData={badgeProductsData}/>
 
           {/* Single Products Card */}
-
-          {productsData.map(
-            ({ img, name, location, price, releaseTime }, ind) => {
-              return (
-                <Card
-                  className="productsCard"
-                  style={{
-                    maxWidth: "39.5rem",
-                    maxHeight: "auto",
-                  }}
-                >
-                  <Card.Body className="productsCardBody">
-                    <img
-                      style={{ width: "140px", height: "100px" }}
-                      src={img}
-                    />
-                    <div className="cardContent">
-                      <Card.Title className="ProductName">{name}</Card.Title>
-                      <Card.Text className="productLocation">
-                        {location}
-                      </Card.Text>
-                      <h6 className="productPrice">{price}</h6>
-                    </div>
-                  </Card.Body>
-                  <span className="releaseTime">{releaseTime}</span>
-                </Card>
-              );
-            }
-          )}
+      
+         <SingleProductCard productsData={productsData}/>
 
           {/* Pagination */}
 
@@ -606,8 +560,10 @@ export const SingleProduct: FC<productProps> = ({ productName }) => {
             <Pagination.Ellipsis />
             <Pagination.Next />
           </Pagination>
+
         </Container>
       </Col>
     </Row>
+  
   );
 };

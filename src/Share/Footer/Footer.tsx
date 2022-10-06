@@ -15,7 +15,7 @@ export const Footer: FC = () => {
       <Container>
         <Row>
           <Col lg={4} md={4} xs={12}>
-            <h6>Download our app</h6>
+            <h6 className="FooterAppTitle">Download our app</h6>
             <div className="">
               <a href="#">
                 <GooglePlay />

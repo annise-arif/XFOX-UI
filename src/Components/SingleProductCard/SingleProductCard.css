@@ -1,0 +1,28 @@
+/* Products card */
+
+.productsCard{
+  border: none;
+  border-top: 0.5px solid #d4ded9;
+  border-radius: 0px;
+  cursor: pointer;
+}
+.productsCard:hover{
+  box-shadow: 0px 1px 5px 4px rgba(143,143,143,0.22);
+-webkit-box-shadow: 0px 1px 5px 4px rgba(143,143,143,0.22);
+-moz-box-shadow: 0px 1px 5px 4px rgba(143,143,143,0.22);
+border-radius: 5px;
+overflow-y: auto;
+}
+.productsCardBody{
+  display: flex;
+  padding: 10px;
+}
+.releaseTime{
+  color: #707676;
+  text-align: end;
+  padding-bottom: 10px;
+  margin-top: -30px;
+  padding-right: 9px;
+  font-size: 15px;
+}
+

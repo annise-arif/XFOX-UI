@@ -1,0 +1,45 @@
+/* Basge Products card */
+
+.mainCard{
+  border: 1px solid #ffcb5f;
+  cursor: pointer;
+}
+  .cardBody{
+  display: flex;
+  padding: 8px;
+  background-color: #FFFCF7;
+  border-radius: 5px;
+}
+  .mainCard:hover{
+    box-shadow: 0px 0px 8px 1px rgba(242,179,59,0.61);
+    -webkit-box-shadow: 0px 0px 8px 1px rgba(242,179,59,0.61);
+    -moz-box-shadow: 0px 0px 8px 1px rgba(242,179,59,0.61);
+}
+.cardContent{
+  margin-left: 18px;
+}
+.ProductName{
+  font-size: 16px;
+  font-weight: 800;
+  color: #2f3432;
+  margin-top: 6px;
+}
+.productLocation{
+  color: #707676;
+  font-size: 14.5px;
+  padding-top: 6px;
+  padding-bottom: 0px;
+}
+.productPrice{
+  padding-top: 0px;
+  margin-top: -10px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #009877;
+
+}
+.badge{
+  text-align: end;
+  padding-bottom: 10px;
+  margin-top: -30px;
+}

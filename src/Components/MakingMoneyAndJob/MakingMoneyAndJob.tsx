@@ -35,7 +35,7 @@ export const MakingMoneyAndJob: FC = () => {
           
           <Card.Body className="d-flex">
             <div className="content ms-4">
-            <Card.Title className=""><h1 className="text-primary fw-bold">Xfox<small className="fw-normal fs-4">Jobs</small></h1></Card.Title>
+            <Card.Title className=""><h1 className="xfoxLogo fw-bold">Xfox<small className="fw-normal fs-4">Jobs</small></h1></Card.Title>
             <Card.Text>
               <small>Looking to hire or get hired in Bangladesh ? <br /> Get access to 800k+ CVs or browse through 800+ job vacancies!</small>
             </Card.Text>

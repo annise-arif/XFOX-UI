@@ -12,8 +12,14 @@
   text-decoration: none;
   color: #0074BA;
 }
+.FooterAppTitle{
+  font-size: 15px;
+  font-weight: 700;
+}
 .FooterTitleStyle{
   margin-bottom: 19px;
+  font-size: 14.4px;
+  font-weight: 700;
 }
 .FooteranchorStyle{
   font-size: 14.3px;

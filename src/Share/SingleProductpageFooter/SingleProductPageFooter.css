@@ -1,0 +1,40 @@
+.SPPFmain{
+  background-color: #F3F6F5;
+}
+.list{
+  list-style: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: #424e4e;
+}
+.footerRow{
+  /* margin-left: 12px; */
+  padding-left: 102px;
+  padding-right: 90px;
+}
+.footerUl{
+  margin-top: 13px;
+}
+.footerLinkStyle{
+  list-style: none;
+}
+.footerLinkStyle{
+  list-style: none;
+}
+.footerAnchorStyle{
+  letter-spacing: 0.2px;
+  line-height: 25px;
+  color: #646666;
+  font-size: 12.3px;
+  text-decoration: none;
+  margin-left: -32px;
+  padding-left: 0px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  display: block;
+}
+.footerAnchorStyle:hover{
+  color: #646666;
+}

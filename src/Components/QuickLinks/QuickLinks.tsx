@@ -18,7 +18,7 @@ export const QuickLinks: FC = () => {
             <Col lg={3} md={6} xs={12} className=""  key={index}>
             <Card className="quickLinkCard mt-1">
             
-            <Card.Body className="d-flex" style={{ height: '10rem' }}>
+            <Card.Body className="cartBody d-flex" style={{ height: '10rem', width: "auto" }}>
               <div className="ms-4">
               <Card.Title className="fw-bold"><small className="QuickLinkTitle">{title}</small></Card.Title>
               <Card.Text>
