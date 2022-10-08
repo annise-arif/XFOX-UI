@@ -12,13 +12,14 @@ import { ReactComponent as TopArrow } from "../../assets/singlePageSvg/topArrow.
 import { ReactComponent as CaroselLeftArrow } from "../../assets/singlePageSvg/CaroselLeftArrow.svg";
 import { ReactComponent as CaroselRightArrow } from "../../assets/singlePageSvg/CaroselRightArrow.svg";
 import "./SingleProduct.css";
-import Pagination from "react-bootstrap/Pagination";
 import { SingleProductCard } from "../SingleProductCard/SingleProductCard";
 import { SingleBadgeProductCard } from "../SingleBadgeProductCard/SingleBadgeProductCard";
 import {mobileAccessories} from "./mobileAccessoriesData";
 import {locationName} from "./locationNameData";
 import {badgeProductsData} from "./badgeProductsData";
 import {productsData} from "./productsData";
+import {ReactComponent as LeftSvg} from "../../assets/PaginationSvg/leftSvg.svg";
+import {ReactComponent as RightSvg} from "../../assets/PaginationSvg/rightSvg.svg";
 
 
 type productProps = {
@@ -222,7 +223,7 @@ export const SingleProduct: FC<productProps> = ({ categoryName }) => {
         </Container>
       </Col>
 
-      <Col lg={9} md={9} xs={12} className="mb-5">
+      <Col lg={9} md={9} xs={12} className="mb-3">
         <Container>
           <div className="links">
             <ul className="d-flex gap-1">
@@ -331,16 +332,18 @@ export const SingleProduct: FC<productProps> = ({ categoryName }) => {
 
           {/* Pagination */}
 
-          <Pagination className="mt-5 ms-5 ps-5 d-flex">
-            <Pagination.Prev className="ms-5 ps-5"/>
-            <Pagination.Item active>{1}</Pagination.Item>
-            <Pagination.Item>{2}</Pagination.Item>
-            <Pagination.Item>{3}</Pagination.Item>
-            <Pagination.Item>{4}</Pagination.Item>
-            <Pagination.Item>{5}</Pagination.Item>
-            <Pagination.Ellipsis />
-            <Pagination.Next />
-          </Pagination>
+          <div className="pagination">
+            <a className="me-5" href="#"><LeftSvg className="mb-1" />  <span className="prev ms-2">Previous</span></a>
+
+                <a className="active number" href="#">1</a>
+                <a className="number" href="#">2</a>
+                <a className="number" href="#">3</a>
+                <a className="number" href="#">4</a>
+                <a className="number" href="#">5</a>
+                <a className="number" href="#"><b>...</b></a>
+
+            <a className="ms-5" href="#">  <span className="next me-2">Next</span>   <RightSvg  className="mb-1"/></a>
+          </div>
 
         </Container>
       </Col>
