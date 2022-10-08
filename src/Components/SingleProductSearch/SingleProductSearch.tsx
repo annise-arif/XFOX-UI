@@ -6,10 +6,10 @@ import "./SingleProductSearch.css";
 import { ReactComponent as SinglePageSearchSvg } from "../../assets/singlePageSvg/searchIcon.svg";
 
 type productProps = {
-  productName: string | undefined,
+  categoryName: string | undefined,
 };
 
-export const SingleProductSearch: FC<productProps> = (productName) => {
+export const SingleProductSearch: FC<productProps> = (categoryName) => {
   
   return (
     <Row>
@@ -31,7 +31,7 @@ export const SingleProductSearch: FC<productProps> = (productName) => {
                 <div className="mobileCard mb-2 me-2">
                   <MobileSvg />
                 </div>
-                {productName.productName}
+                {categoryName.categoryName}
               </button>
             </a>
           </Col>

@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { ItemsCategoryData } from "./Data";
 import './ItemsCategory.css';
 
@@ -12,7 +13,7 @@ export const ItemsCategory: FC = () => {
         {ItemsCategoryData.map(({ SvgIcon, info, infoCount, productName, _id }, index) => {
           return (
             <Col key={index} className="mb-5 mt-3">
-              <a className="d-flex text-decoration-none text-dark mt-1" href={`${productName}/${_id}`}>
+              <Link to={productName} className="d-flex text-decoration-none text-dark mt-1">
                 <div className="itemIcon mt-1">
                   <SvgIcon />
                 </div>
@@ -20,7 +21,7 @@ export const ItemsCategory: FC = () => {
                   <p className="info">{info}</p>
                   <span className="infoCount">{infoCount}</span>
                 </div>
-              </a>
+                </Link>
             </Col>
           );
         })}

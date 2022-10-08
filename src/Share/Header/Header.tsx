@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './Header.css';
 import { LoginModal } from '../../Components/LoginModal/LoginModal';
+import { Link } from 'react-router-dom';
 
 
 export const Header:FC = () => {  
@@ -13,8 +14,10 @@ export const Header:FC = () => {
     <div>
       <Navbar className="HeaderBg" expand="lg">
       <Container>
-        <Navbar.Brand href="/">
-          <h3 className='text-white fs-3 fw-bold'>Xfox.com</h3>
+        <Navbar.Brand>
+          <Link style={{textDecoration: "none"}} to="/">
+          <h3 className='text-white fs-2 fw-bold'>Xfox.com</h3>
+          </Link>
           
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />

@@ -22,10 +22,10 @@ import {productsData} from "./productsData";
 
 
 type productProps = {
-  productName: string | undefined;
+  categoryName: string | undefined;
 };
 
-export const SingleProduct: FC<productProps> = ({ productName }) => {
+export const SingleProduct: FC<productProps> = ({ categoryName }) => {
   const [categoryOpen, setCategoryOpen] = useState(false);
   const [locationOpen, setLocationOpen] = useState(false);
 
@@ -242,7 +242,7 @@ export const SingleProduct: FC<productProps> = ({ productName }) => {
               })}
               <li className="LinkStyle">
                 <a className="text-decoration-none" href="#">
-                  <b>{productName}</b>
+                  <b>{categoryName}</b>
                 </a>
               </li>
             </ul>

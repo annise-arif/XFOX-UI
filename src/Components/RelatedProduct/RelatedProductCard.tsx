@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
-import './SingleProductCard.css';
+import { Col, Row } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
-import { Link } from 'react-router-dom';
 
 type  productsDataProps = {
   img: string;
@@ -12,24 +11,25 @@ type  productsDataProps = {
   id: number;
 }[];
 
-export const SingleProductCard:FC<{productsData :productsDataProps }> = ({productsData}) => {
+export const RelatedProductCard:FC<{relatedProductsData :productsDataProps }> = ({relatedProductsData}) => {
   return (
-    <div>
-      {productsData.map(
+    <Row className='mx-5'>
+      {relatedProductsData.map(
       ({ img, name, location, price, releaseTime, id }, i) => {
         return (
-          <Link to={`productDetails/${name}/${id}`} style={{textDecoration: "none"}}>
+
+         <Col lg={6} className="px-4">
           <Card
             key={i}
-            className="productsCard"
+            className="border-0 pt-1"
             style={{
-              maxWidth: "39.4rem",
+              maxWidth: "33rem",
               maxHeight: "auto",
             }}
           >
-            <Card.Body className="productsCardBody">
+            <Card.Body className="productsCardBody mt-2">
               <img
-                style={{ width: "140px", height: "100px" }}
+                style={{ maxWidth: "150px", maxHeight: "120px" }}
                 src={img}
               />
               <div className="cardContent">
@@ -42,10 +42,11 @@ export const SingleProductCard:FC<{productsData :productsDataProps }> = ({produc
             </Card.Body>
             <span className="releaseTime">{releaseTime}</span>
           </Card>
-          </Link>
+          </Col>
+          
         );
       }
     )}
-    </div>
+    </Row>
   );
 };

@@ -14,7 +14,8 @@ import {SPPFData} from "./SingleProductPageFooterData";
 
 
 export const SingleProductPage: FC = () => {
-  const { productName, _id } = useParams();
+  const { categoryName } = useParams();
+  console.log(categoryName);
 
   return (
     <>
@@ -24,12 +25,12 @@ export const SingleProductPage: FC = () => {
           <div className="main">
             <div className="singlePageHeader">
               <SinglePageHeader />
-              <SingleProductSearch productName={productName} />
+              <SingleProductSearch categoryName={categoryName} />
             </div>
             <div className="hr">
               <hr />
             </div>
-            <SingleProduct productName={productName}/>
+            <SingleProduct categoryName={categoryName}/>
           </div>
         </Container>
       </div>

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { ReactComponent as Badge } from "../../assets/svg/badge.svg";
 import Card from "react-bootstrap/Card";
 import './SingleBadgeProductCard.css';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
@@ -21,9 +21,8 @@ export const SingleBadgeProductCard:FC<{badgeProductsData: badgeProductsProps}> 
     <>
        {badgeProductsData.map(({ img, name, location, price, id }, index) => {
             return (
-              <a style={{textDecoration: "none"}} href={`/singleProductDetails/${name}/${id}`}>
+              <Link to={`productDetails/${name}/${id}`} style={{textDecoration: "none"}}>
               <Card
-                // onClick={ () => productDetailHandlar(name) }
                 key={index}
                 className="mainCard"
                 style={{
@@ -50,7 +49,7 @@ export const SingleBadgeProductCard:FC<{badgeProductsData: badgeProductsProps}> 
                 </span>
                 
               </Card>
-              </a>
+              </Link>
                
             );
           })}

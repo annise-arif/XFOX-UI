@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Header } from "../../Share/Header/Header";
 import { ReactComponent as RightLinkArrow } from "../../assets/singlePageSvg/rightLinkArrow.svg";
 import { ReactComponent as ShareSvg } from "../../assets/DetailsPageSvg/shareIcon.svg";
@@ -20,7 +20,19 @@ import { SinglePageHeader } from "../../Components/SinglePageHeader/SinglePageHe
 import { SPPFData } from "./SingleProductDetailsFooterData";
 import { SingleProductpageFooter } from "../../Share/SingleProductpageFooter/SingleProductpageFooter";
 import Carousel from "react-bootstrap/Carousel";
+import {ReactComponent as PrevSvg} from "../../assets/DetailsPageSvg/prevSvg.svg";
+import {ReactComponent as NextSvg} from "../../assets/DetailsPageSvg/nextSvg.svg";
+import {relatedProductsData} from "./RelatedProductsData";
 import { Footer } from "../../Share/Footer/Footer";
+import { RelatedProductCard } from "../../Components/RelatedProduct/RelatedProductCard";
+import {ReactComponent as CallSvg} from "../../assets/DetailsPageSvg/callSvg.svg";
+import {ReactComponent as MessageSvg} from "../../assets/DetailsPageSvg/messageSvg.svg";
+import {ReactComponent as SafetySvg} from "../../assets/DetailsPageSvg/safetySvg.svg";
+import {ReactComponent as Whatsapp} from "../../assets/DetailsPageSvg/whatsapp.svg";
+import {ReactComponent as Twitter} from "../../assets/DetailsPageSvg/twitter.svg";
+import {ReactComponent as Facebook} from "../../assets/DetailsPageSvg/facebook.svg";
+import {ReactComponent as Email} from "../../assets/DetailsPageSvg/email.svg";
+import {ReactComponent as Copy} from "../../assets/DetailsPageSvg/copy.svg";
 
 const croppedImgData = [
   mainImg,
@@ -97,7 +109,7 @@ export const SingleProductDetails: FC = () => {
                         <div className="fullScreenSvg">
                           <FullScreenSvg />
                         </div>
-                        <img className="img-fluid" src={image} alt="" />
+                        <img className="img-fluid mainGalaryImage" src={image} alt="" />
                       </button>
                     </div>
 
@@ -105,9 +117,9 @@ export const SingleProductDetails: FC = () => {
                       <ul className="thumbnileImg gap-3">
                         {croppedImgData.map((img, index) => {
                           return (
-                            <li onClick={() => handleImage(img)} key={index}>
+                            <li onClick={() => handleImage(img)} key={index} >
                               <img
-                                className="croppedImage"
+                                className={`croppedImage${img === image ? " active": ""}` }
                                 src={img}
                                 alt=""
                                 style={{ height: "80px", width: "100px" }}
@@ -148,7 +160,7 @@ export const SingleProductDetails: FC = () => {
                             return (
                               <li onClick={() => handleImage(img)} key={index}>
                                 <img
-                                  className="croppedImage"
+                                  className={`croppedImage${img === image ? " active": ""}` }
                                   src={img}
                                   alt=""
                                   style={{ height: "80px", width: "100px" }}
@@ -200,15 +212,53 @@ export const SingleProductDetails: FC = () => {
 
                 <Col lg={4}>
                   <div className="share-and-save-link">
+                    <div className="socialLink position-absolute">
+                      <Link className="d-flex gap-2 align-items-center" style={{textDecoration: "none"}} to="https://whatsapp.com"> <Whatsapp /> <span className="whatsapp">Whatsapp</span></Link>
+                      <Link className="d-flex gap-2 align-items-center" style={{textDecoration: "none"}} to="https://facebook.com"> <Facebook /> <span className="facebook">Facebook</span></Link>
+                      <Link className="d-flex gap-2 align-items-center" style={{textDecoration: "none"}} to="https://twitter.com"> <Twitter /> <span className="twitter">Twitter</span></Link>
+                      <Link className="d-flex gap-2 align-items-center" style={{textDecoration: "none"}} to="https://email.com"> <Email /> <span className="email">Email</span></Link>
+                      <Link className="d-flex gap-2 align-items-center" style={{textDecoration: "none"}} to=""> <Copy /> <span className="copyLink">Copy Link</span></Link>
+                    
+                    </div>
                     <button className="shareButton">
                       <ShareSvg />
                       <span className="">Share</span>
                     </button>
+                    
                     <button className="shareButton">
                       <StarSvg />
-                      <span className="">Share</span>
+                      <span className="">Save ad</span>
                     </button>
+
                   </div>
+
+                  {/* For Sale By and Safety section start */}
+                  <div className="for-sale-info-section">
+                  <div className="for-sale">
+                    <p className="for-sale-by"><span>For sale by</span> <b className="seller-text">Seller</b></p>
+                    <p className="contact-number d-flex border-top">
+                      <CallSvg className="callSvg"/>
+                      <Link to="" className="number">
+                        <p><b>01971XXXXXX</b></p>
+                        <small>Click to show phone number</small>
+                      </Link>
+                    </p>
+                    <p className="chat border-top"><MessageSvg /> <b>Chat</b></p>
+                  </div>
+
+                  {/* safety section start */}
+                  <div className="safety-tips">
+                    <h3><SafetySvg /> <b>Safety tips</b></h3>
+                    <ul className="safety-list">
+                      {
+                        ["Avoid offers that look unrealistic", "Chat with seller to clarify item details", "Meet in asafe & public place", "Check the item before buying it", "Don't pay in advance"].map((item, i) => <li key={i}><small>{item}</small></li>)
+                      }
+                    </ul>
+                    <a className="see-all-safety-tips-link" target="blank" href="https://google.com">See all safety tips</a>
+                  </div>
+                  </div>
+                  {/* safety section end */}
+                  {/* For Sale By and Safety section end */}
                 </Col>
                 <div className="horizontal-line">
                   <hr />
@@ -233,43 +283,31 @@ export const SingleProductDetails: FC = () => {
           {/* Single Page header end */}
 
           {/* Similar ads start*/}
-          <div className="main similarAds productDetails">
+          <div className="main similarAds productDetails pb-2">
             <h3 className="similar-ads-heading">Similar ads</h3>
             <div className="horizontal-line">
               <hr />
             </div>
 
             {/* slider start */}
-            <Carousel slide={false} variant="">
+            <Carousel indicators={true} slide={false} prevIcon={
+              <div className="PrevSvg"><PrevSvg /></div>
+            } nextIcon={<div className="NextSvg"><NextSvg /></div>}>
 
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src="https://i.ibb.co/BrmSfZD/964323-untitled-design-57.jpg"
-                  alt="First slide"
-                />
-                 <Carousel.Caption>
-                  <h3>First slide label</h3>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                 </Carousel.Caption>
+              <Carousel.Item style={{height: "17rem"}}>
+                <RelatedProductCard relatedProductsData={relatedProductsData.slice(0, 2)}/>
+                <RelatedProductCard relatedProductsData={relatedProductsData.slice(2, 4)}/>
               </Carousel.Item>
 
-              {/* <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src="https://i.ibb.co/BrmSfZD/964323-untitled-design-57.jpg"
-                  alt="Second slide"
-                />
-
+              <Carousel.Item style={{height: "17rem"}}>
+                <RelatedProductCard relatedProductsData={relatedProductsData.slice(4, 6)}/>
+                <RelatedProductCard relatedProductsData={relatedProductsData.slice(6, 8)}/>
               </Carousel.Item>
 
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src="https://i.ibb.co/BrmSfZD/964323-untitled-design-57.jpg"
-                  alt="Third slide"
-                />
-              </Carousel.Item> */}
+              <Carousel.Item style={{height: "17rem"}}>
+                <RelatedProductCard relatedProductsData={relatedProductsData.slice(8, 10)}/>
+                <RelatedProductCard relatedProductsData={relatedProductsData.slice(10, 12)}/>
+              </Carousel.Item>
 
             </Carousel>
             {/* slider end */}
