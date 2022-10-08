@@ -8,14 +8,16 @@ type  productsDataProps = {
   location: string;
   price: string;
   releaseTime: string;
-}[]
+  id: number;
+}[];
 
 export const SingleProductCard:FC<{productsData :productsDataProps }> = ({productsData}) => {
   return (
     <div>
       {productsData.map(
-      ({ img, name, location, price, releaseTime }, i) => {
+      ({ img, name, location, price, releaseTime, id }, i) => {
         return (
+          <a style={{textDecoration: "none"}} href={`/singleProductDetails/${name}/${id}`}>
           <Card
             key={i}
             className="productsCard"
@@ -39,6 +41,7 @@ export const SingleProductCard:FC<{productsData :productsDataProps }> = ({produc
             </Card.Body>
             <span className="releaseTime">{releaseTime}</span>
           </Card>
+          </a>
         );
       }
     )}

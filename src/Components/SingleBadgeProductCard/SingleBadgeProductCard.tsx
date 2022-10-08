@@ -14,11 +14,6 @@ type badgeProductsProps = {
   id: number;
 }[];
 
-// const productDetailHandlar = (name: string) =>{
-//   // e.preventDefault();
-//   const navigate = useNavigate();
-//   navigate("/name");
-// }
 
 export const SingleBadgeProductCard:FC<{badgeProductsData: badgeProductsProps}> = ({badgeProductsData}) => {
   
@@ -26,7 +21,7 @@ export const SingleBadgeProductCard:FC<{badgeProductsData: badgeProductsProps}> 
     <>
        {badgeProductsData.map(({ img, name, location, price, id }, index) => {
             return (
-              <a style={{textDecoration: "none"}} href={`/${id}`}>
+              <a style={{textDecoration: "none"}} href={`/singleProductDetails/${name}/${id}`}>
               <Card
                 // onClick={ () => productDetailHandlar(name) }
                 key={index}
