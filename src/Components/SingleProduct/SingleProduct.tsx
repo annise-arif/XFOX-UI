@@ -261,14 +261,14 @@ export const SingleProduct: FC<productProps> = ({ categoryName }) => {
           <Carousel nextIcon={
               <div>
                 <CaroselRightArrow
-                  style={{ maxHeight: "3.75rem", marginRight: "-3.113rem" }}
+                  style={{ maxHeight: "2.875rem", marginRight: "-3.875rem" }}
                 />
               </div>
             }
             prevIcon={
               <div>
                 <CaroselLeftArrow
-                  style={{maxHeight: "3.75rem", marginLeft: "-36.625rem",}}
+                  style={{maxHeight: "2.875rem", marginLeft: "-37.25rem",}}
                 />
               </div>
             }
