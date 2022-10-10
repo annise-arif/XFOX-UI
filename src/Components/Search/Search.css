@@ -34,10 +34,11 @@
   padding: 11px 13px;
   border-radius: 50px;
   top: calc(50% - 24px);
-  right: 481px;
+  right: 25.4%;
 }
 .SearchInput {
   width: 50%;
+  position: relative;
 }
 
 

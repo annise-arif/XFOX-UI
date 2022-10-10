@@ -8,7 +8,7 @@ export const Search: FC = () => {
   let Country = "All of Bangladesh";
   return (
     <div className="Search pt-5">
-      <div className="">
+      <div className="location-of-all-countries">
         <button
           onClick={() => setModalShow(true)}
           className="locationBtn mx-auto mb-3"
@@ -24,6 +24,7 @@ export const Search: FC = () => {
               </svg>
             </div>
           </span>
+
           <span>{Country}</span>
         </button>
         <CountriesModal show={modalShow} onHide={() => setModalShow(false)} />

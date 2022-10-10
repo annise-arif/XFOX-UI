@@ -258,18 +258,17 @@ export const SingleProduct: FC<productProps> = ({ categoryName }) => {
 
           {/* Products Slider */}
 
-          <Carousel
-            nextIcon={
+          <Carousel nextIcon={
               <div>
                 <CaroselRightArrow
-                  style={{ maxHeight: "60px", marginRight: "-53px" }}
+                  style={{ maxHeight: "3.75rem", marginRight: "-3.113rem" }}
                 />
               </div>
             }
             prevIcon={
               <div>
                 <CaroselLeftArrow
-                  style={{ maxHeight: "60px", marginLeft: "-584px" }}
+                  style={{maxHeight: "3.75rem", marginLeft: "-36.625rem",}}
                 />
               </div>
             }
@@ -285,10 +284,12 @@ export const SingleProduct: FC<productProps> = ({ categoryName }) => {
                 src="https://i.ibb.co/VJgVBxY/cropped.jpg"
                 alt="First slide"
               />
-              <Carousel.Caption className="Captions">
+              <Carousel.Caption className="CaptionsBg">
+                <div className="Captions">
                 <span>Mobile Shop Exchange Point</span>
                 <h3>Apple iPhone 13. Pro Max 256GB GOLD (New) (Used)</h3>
                 <p>Tk 131,000</p>
+                </div>
               </Carousel.Caption>
             </Carousel.Item>
 
@@ -299,10 +300,12 @@ export const SingleProduct: FC<productProps> = ({ categoryName }) => {
                 alt="Second slide"
               />
 
-              <Carousel.Caption className="Captions">
+              <Carousel.Caption className="CaptionsBg">
+                <div className="Captions">
                 <span>Mobile Shop Exchange Point</span>
                 <h3>OPPO A57 A57(4GB+64GB)(New)</h3>
                 <p>Tk 4,899</p>
+                </div>
               </Carousel.Caption>
             </Carousel.Item>
 
@@ -313,10 +316,12 @@ export const SingleProduct: FC<productProps> = ({ categoryName }) => {
                 alt="Third slide"
               />
 
-              <Carousel.Caption className="Captions">
+              <Carousel.Caption className="CaptionsBg">
+                <div className="Captions">
                 <span>dazzle</span>
                 <h3>Apple iPhone 13 Pro Max 256gb Bh 100% (Used)</h3>
                 <p>Tk 95,000</p>
+                </div>
               </Carousel.Caption>
             </Carousel.Item>
 

@@ -20,6 +20,7 @@
 }
 .ProductName{
   font-size: 16px;
+  /* font-family: "Open Sans", "PF DinText Pro", Arial, Helvetica, sans-serif; */
   font-weight: 800;
   color: #2f3432;
   margin-top: 6px;
@@ -27,6 +28,7 @@
 .productLocation{
   color: #707676;
   font-size: 14.5px;
+  font-family: "Open Sans", "PF DinText Pro", Arial, Helvetica, sans-serif;
   padding-top: 6px;
   padding-bottom: 0px;
 }
