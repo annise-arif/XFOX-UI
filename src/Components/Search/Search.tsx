@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { InputGroup } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { CountriesModal } from "./CountriesModal/CountriesModal";
 import "./Search.css";
@@ -50,6 +51,7 @@ export const Search: FC = () => {
           </svg>
         </div>
       </Form>
+
     </div>
   );
 };

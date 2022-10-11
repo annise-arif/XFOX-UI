@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Dropdown, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { Header } from "../../Share/Header/Header";
 import { ReactComponent as RightLinkArrow } from "../../assets/singlePageSvg/rightLinkArrow.svg";
@@ -42,6 +42,14 @@ const croppedImgData = [
   croppedImg4,
 ];
 export const SingleProductDetails: FC = () => {
+
+  const [display, setDisplay] = useState(false);
+
+	const handleDisplayShareBtn = () => {
+		setDisplay((prev) =>!prev);
+	};
+
+
   const { name, id } = useParams();
 
   const [image, setImage] = useState(mainImg);
@@ -61,6 +69,7 @@ export const SingleProductDetails: FC = () => {
       <Header />
       <div className="SinglePagebody">
         <Container>
+        
           {/* Links */}
 
           <div className="links">
@@ -212,7 +221,14 @@ export const SingleProductDetails: FC = () => {
 
                 <Col lg={4}>
                   <div className="share-and-save-link">
-                    <div className="socialLink position-absolute">
+                    
+                    <button onClick={handleDisplayShareBtn} className="shareButton">
+                      <ShareSvg />
+                      <span className="">Share</span>
+                    </button>
+
+                    <div className={`socialLink ${display === true ? 'd-block' : 'd-none'}`}>
+                      <div className="triangle"></div>
                       <Link className="d-flex gap-2 align-items-center" style={{textDecoration: "none"}} to="https://whatsapp.com"> <Whatsapp /> <span className="whatsapp">Whatsapp</span></Link>
                       <Link className="d-flex gap-2 align-items-center" style={{textDecoration: "none"}} to="https://facebook.com"> <Facebook /> <span className="facebook">Facebook</span></Link>
                       <Link className="d-flex gap-2 align-items-center" style={{textDecoration: "none"}} to="https://twitter.com"> <Twitter /> <span className="twitter">Twitter</span></Link>
@@ -220,12 +236,8 @@ export const SingleProductDetails: FC = () => {
                       <Link className="d-flex gap-2 align-items-center" style={{textDecoration: "none"}} to=""> <Copy /> <span className="copyLink">Copy Link</span></Link>
                     
                     </div>
-                    <button className="shareButton">
-                      <ShareSvg />
-                      <span className="">Share</span>
-                    </button>
                     
-                    <button className="shareButton">
+                    <button className="saveAd">
                       <StarSvg />
                       <span className="">Save ad</span>
                     </button>
@@ -233,7 +245,7 @@ export const SingleProductDetails: FC = () => {
                   </div>
 
                   {/* For Sale By and Safety section start */}
-                  <div className="for-sale-info-section">
+                  <div className={`for-sale-info-section ${display === true ? 'position-statick' : 'position-sticky'}`}>
                   <div className="for-sale">
                     <p className="for-sale-by"><span>For sale by</span> <b className="seller-text">Seller</b></p>
                     <p className="contact-number d-flex border-top">
