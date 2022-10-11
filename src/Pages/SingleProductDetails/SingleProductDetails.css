@@ -37,7 +37,7 @@
   font-weight: 500;
 }
 
-.triangle{
+.socialLinkTriangle{
   content: "";
   position: relative;
   height: 12px;
@@ -45,10 +45,10 @@
   background-color: white;
   z-index: 0;
   top: -7px;
-  left: 74px;
+  left: 83px;
   rotate: 45deg;
-  border-top: 1px solid #ececec;
-  border-left: 1px solid #ececec;
+  border-top: 1px solid #e7e7e7;
+  border-left: 1px solid #e7e7e7;
 }
 .socialLink{
   background-color: white;

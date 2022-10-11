@@ -159,11 +159,11 @@ export const SingleProductDetails: FC = () => {
                           className="img-fluid"
                           src={image}
                           alt="img"
-                          style={{ height: "720", width: "865px" }}
+                          style={{ height: "100%", width: "865px" }}
                         />
                         
                       </div>
-                      <div className="cropped-thumbnile d-flex d-flex justify-content-center mt-5 pt-4">
+                      <div className="cropped-thumbnile d-flex d-flex justify-content-center">
                         <ul className="thumbnileImg gap-3 ps-0 ms-0">
                           {croppedImgData.map((img, index) => {
                             return (
@@ -228,7 +228,7 @@ export const SingleProductDetails: FC = () => {
                     </button>
 
                     <div className={`socialLink ${display === true ? 'd-block' : 'd-none'}`}>
-                      <div className="triangle"></div>
+                      <div className="socialLinkTriangle"></div>
                       <Link className="d-flex gap-2 align-items-center" style={{textDecoration: "none"}} to="https://whatsapp.com"> <Whatsapp /> <span className="whatsapp">Whatsapp</span></Link>
                       <Link className="d-flex gap-2 align-items-center" style={{textDecoration: "none"}} to="https://facebook.com"> <Facebook /> <span className="facebook">Facebook</span></Link>
                       <Link className="d-flex gap-2 align-items-center" style={{textDecoration: "none"}} to="https://twitter.com"> <Twitter /> <span className="twitter">Twitter</span></Link>
